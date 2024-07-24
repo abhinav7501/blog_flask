@@ -1,0 +1,24 @@
+{
+
+   "params":{ 
+     "local_server":"True" ,
+     "local_uri":"mysql://root:@localhost/cleanblog" ,
+     "prod_uri":"mysql://root:@localhost/cleanblog",
+     "fb_url":"https://facebook.com/cleanblog",
+     "tw_url":"https://twitter.com/cleanblog",
+     "gh_url":"https://github.com/cleanblog",
+     "gmail-mail":"malaigulla@gmail.com",
+     "gmail-pass":"tekp eism ylkp duvx",
+     "about_text":"hi this is malai gulla welcome to my blog-world ",
+    "no_of_posts": 2,
+
+     "blog_name":"clean blog",
+     "admin_user":"malai",
+    "admin_password": "gulla",
+    "upload_location":"C:/Users/Abhinav/Desktop/flask_demo/static/assets/img"
+
+
+
+   }
+
+}
