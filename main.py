@@ -9,6 +9,7 @@ import json
 import os
 import math
 from werkzeug.utils import secure_filename
+import requests
 
 with open('config.json','r' ) as c:
     params=json.load(c)["params"]
@@ -127,8 +128,8 @@ def delete(sno):
 def uploader():
      if 'user' in session and session['user']==params['admin_user']:
          if( request.method=='POST'):
-            f=request.files['file1']
-            f.save(os.path.join(app.config['upload_folder'],secure_filename(f.filename)))   
+            f=request.files.get('file1')
+            f.save(os.path.join(app.config['upload_folder'],secure_filename(f.filename))) 
             return "uploaded"
                      
 @app.route("/logout")
@@ -191,5 +192,34 @@ def post_route(post_slug,methods=['GET']):
     
     
     return render_template('post.html',params=params,post=post)
+
+def fetch_tech_blogs():
+    api_key = params['news_api_key']
+    url = f"https://newsapi.org/v2/top-headlines?category=technology&language=en&apiKey={api_key}"
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        articles = response.json().get('articles', [])
+        # Filter out blogs with null title, description, or content
+        filtered_blogs = [blog for blog in articles if blog.get('title') and blog.get('description') and blog.get('content')]
+        return filtered_blogs
+    else:
+        return []
+
+    
+    
+@app.route("/tech-blogs")
+def tech_blogs():
+    blogs = fetch_tech_blogs()
+    return render_template('tech_blogs.html', params=params, blogs=blogs)
+
+@app.route("/blog/<int:blog_id>")
+def blog_detail(blog_id):
+    blogs = fetch_tech_blogs()
+    if 0 <= blog_id < len(blogs):
+        blog = blogs[blog_id]
+        return render_template('blog.html', params=params, blog=blog)
+    else:
+        return "Blog not found", 404
 
 app.run(debug=True)

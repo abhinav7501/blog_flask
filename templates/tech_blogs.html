@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block body %}
+      <!-- Page Header-->
+      <header class="masthead" style="background-image: url('  {{url_for('static',filename='assets/img/post-bg.jpg')}}  ')">
+          <div class="container position-relative px-4 px-lg-5">
+              <div class="row gx-4 gx-lg-5 justify-content-center">
+                  <div class="col-md-10 col-lg-8 col-xl-7">
+                      <div class="site-heading">
+                          <h1>Trending </h1>
+                          <span class="subheading">Read Trending Blogs and News</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </header>
+      <!-- Main Content-->
+      <div class="container px-4 px-lg-5">
+          <div class="row gx-4 gx-lg-5 justify-content-center">
+              <div class="col-md-10 col-lg-8 col-xl-7">
+
+
+
+                  <!-- Post preview using for loop from database-->
+
+                  {% for blog in blogs  %}
+               
+             
+                  <div class="post-preview">
+                    <a href="{{ url_for('blog_detail', blog_id=loop.index0) }}">
+                          <h2 class="post-title">{{ blog.title  or '' }}</h2>
+                         
+                      </a>
+                      <p class="post-meta">
+                          Posted by
+                          <a href="#!">{{blog.author  or ''}}</a>
+                          on {{blog.publishedAt  or ''}}
+                      </p>
+                  </div>
+                  {{blog.description  or ''}}...
+                  <!-- Divider-->
+                  <hr class="my-4" />
+              </li></a>
+                  {% endfor %}
+                  
+                  <!-- Pager-->
+               
+              </div>
+          </div>
+      </div>
+ 
+      {% endblock  %}

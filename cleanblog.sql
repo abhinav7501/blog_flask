@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2024 at 12:40 AM
+-- Generation Time: Jul 26, 2024 at 04:32 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -45,7 +45,8 @@ INSERT INTO `contacts` (`sno`, `name`, `phone`, `mesg`, `date`, `email`) VALUES
 (2, 'Raj aryan', '1234567890', 'first entry', NULL, 'ewdew@gmail.com'),
 (3, 'sda', '1234567890', 'DAafeaefa', NULL, 'daadad@gvc'),
 (4, 'sda', '1234567890', 'DAafeaefa', NULL, 'daadad@gvc'),
-(5, 'paracetamol', '1234567890', 'haan bhai aagya swad', NULL, 'nivedita.gy@rnsit.ac.in');
+(5, 'paracetamol', '1234567890', 'haan bhai aagya swad', NULL, 'nivedita.gy@rnsit.ac.in'),
+(6, 'abhinav', '1234567890', 'finall check for website before hosting', '2024-07-26 18:54:05', 'ewdew@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -69,10 +70,10 @@ CREATE TABLE `posts` (
 
 INSERT INTO `posts` (`sno`, `title`, `tagline`, `slug`, `content`, `img_file`, `date`) VALUES
 (1, 'Let\'s Learn Stocks', 'stocks are magic', 'first-post', 'Stocks  consist of all the shares[a] by which ownership of a corporation or company is divided.[1] A single share of the stock means fractional ownership of the corporation in proportion to the total number of shares. This typically entitles the shareholder (stockholder) to that fraction of the company\'s earnings, proceeds from liquidation of assets (after discharge of all senior claims such as secured and unsecured debt),[3] or voting power, often dividing these up in proportion to the number of like shares each stockholder owns. Not all stock is necessarily equal, as certain classes of stock may be issued, for example, without voting rights, with enhanced voting rights, or with a certain priority to receive profits or liquidation proceeds before or after other classes of shareholders.', 'stocks.jpg', '2024-07-22 16:41:58'),
-(2, 'Second Post', 'jinja synopsis updated', 'second-post', 'A Jinja template is simply a text file. Jinja can generate any text-based format (HTML, XML, CSV, LaTeX, etc.). A Jinja template doesn’t need to have a specific extension: .html, .xml, or any other extension is just fine.\r\n\r\nA template contains variables and/or expressions, which get replaced with values when a template is rendered; and tags, which control the logic of the template. The template syntax is heavily inspired by Django and Python.', 'about.png', '2024-07-22 16:38:47'),
-(3, 'new post fix', 'should be added', 'new-post', 'new post is now added', 'img.png', '2024-07-25 04:08:02'),
-(5, 'newpost again', 'new post added', 'fsdfds', 'asfaafaf', 'img.png', '2024-07-22 16:20:43'),
-(6, 'add feature fix', 'should be added', 'fix-post', 'this is a new post with working add feature', 'about.png', '2024-07-25 04:09:14');
+(2, 'Second Post updated', 'jinja synopsis updated', 'second-post', 'A Jinja template is simply a text file. Jinja can generate any text-based format (HTML, XML, CSV, LaTeX, etc.). A Jinja template doesn’t need to have a specific extension: .html, .xml, or any other extension is just fine.\r\n\r\nA template contains variables and/or expressions, which get replaced with values when a template is rendered; and tags, which control the logic of the template. The template syntax is heavily inspired by Django and Python.', 'jinja.jpg', '2024-07-26 18:51:14'),
+(3, 'new post fix', 'should be added', 'new-post', 'new post is now added', 'postfix.jpg', '2024-07-26 18:52:10'),
+(4, 'add feature fix', 'should be added', 'fix-post', 'this is a new post with working add feature', 'about.png', '2024-07-25 04:09:14'),
+(5, 'image uploader feature fix', 'should be added', 'post-6', 'final post add and image uploader feature check', 'final.jpeg', '2024-07-26 19:56:59');
 
 --
 -- Indexes for dumped tables
@@ -98,13 +99,13 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `sno` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `sno` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
